@@ -74,17 +74,27 @@ const answers = [
 ];
 
 function assessment(userName) {
+  // 現在の日付を取得
+  const now = new Date();
+  const day = now.getDate(); // 日を取得
+
+  // 全文字のコード番号を取得してそれを足し合わせる
   let sumOfCharCode = 0;
   for (let i = 0; i < userName.length; i++) {
-    sumOfCharCode = sumOfCharCode + userName.charCodeAt(i);
+    sumOfCharCode += userName.charCodeAt(i);
   }
 
+  // 日を加えて結果を日替わりにする
+  sumOfCharCode += day;
+
+  // 文字のコード番号の合計を回答の数で割って添字の数値を求める
   const index = sumOfCharCode % answers.length;
   let result = answers[index];
   result = result.replaceAll('###userName###', userName);
   return result;
 }
 
+// テストを行う関数
 function test() {
   console.log('診断結果の文章のテスト');
 
