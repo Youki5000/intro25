@@ -40,8 +40,6 @@ a {
   font-weight: bold;
   color: darkblue;
   text-decoration: none;
-  display: flex;
-  align-items: center;
 }
 
 a:hover {
@@ -69,22 +67,6 @@ span {
   margin: 20px auto;
 }
 
-.project-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-.project-list li {
-  margin: 10px 0;
-}
-
-.project-icon {
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
-}
-
-/* Responsive Design */
 @media (min-width: 600px) {
   .section {
     display: flex;
@@ -136,10 +118,5 @@ span {
 
   .section ul, .section p {
     margin-left: 0;
-  }
-
-  .project-icon {
-    width: 20px;
-    height: 20px;
   }
 }
