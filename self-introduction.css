@@ -21,6 +21,10 @@ h1, h3 {
   text-align: center;
 }
 
+.section {
+  margin-bottom: 20px;
+}
+
 ul {
   padding: 0;
   list-style-type: square;
@@ -63,6 +67,28 @@ span {
   margin: 20px auto;
 }
 
+@media (min-width: 600px) {
+  .section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .section ul, .section p {
+    flex: 1;
+    margin-left: 20px;
+  }
+
+  .section ul {
+    margin-top: 0;
+  }
+
+  h3 {
+    flex: 0 0 150px;
+    text-align: left;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 600px) {
   body {
@@ -80,5 +106,17 @@ span {
   .video {
     width: 100%;
     height: auto;
+  }
+
+  .section {
+    display: block;
+  }
+
+  .section h3 {
+    text-align: center;
+  }
+
+  .section ul, .section p {
+    margin-left: 0;
   }
 }
