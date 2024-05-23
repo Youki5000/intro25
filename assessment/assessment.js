@@ -25,6 +25,7 @@ assessmentButton.addEventListener(
     resultDivision.appendChild(paragraph);
 
     // TODO ツイートエリアの作成
+    tweetDivision.innerText = '';
   }
 );
 
