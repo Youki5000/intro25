@@ -202,13 +202,3 @@ th, td {
   list-style-type: circle;
   margin-left: 20px;
 }
-
-/* Additional specific styles for nested lists */
-.works-list > li > ul > li {
-  margin-left: 20px;  /* Add margin to nested list items */
-  padding-left: 10px;
-}
-
-.works-list > li > ul > li a {
-  margin-left: 10px;  /* Add margin to nested list links */
-}
