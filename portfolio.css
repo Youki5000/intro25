@@ -152,4 +152,29 @@ th, td {
   table {
     min-width: 100%;
   }
+
+  #profile ul,
+  #works ul {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  #profile ul li,
+  #works ul li {
+    width: 100%;
+  }
+}
+
+/* Specific styles for Profile and Works sections */
+#profile ul,
+#works ul {
+  display: block;
+  padding-left: 0;
+}
+
+#profile ul li,
+#works ul li {
+  display: block;
+  padding: 5px 0;
+  margin-left: 0;
 }
