@@ -79,6 +79,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 /* --------------------
         見出し
 -------------------- */
@@ -86,14 +90,6 @@ a {
 h1, h2, h3 {
   color: var(--theme-color);
   border-bottom: dashed 0.1em var(--theme-color);
-}
-
-/* --------------------
-        リンク
--------------------- */
-
-a:hover {
-  text-decoration: underline;
 }
 
 /* --------------------
@@ -163,23 +159,13 @@ th, td {
 
 #profile ul li,
 #works ul li {
-  display: block;
   padding: 5px 0;
-  margin-left: 0;
 }
 
 .profile-list,
 .works-list {
   list-style-type: disc;
   margin-left: 20px;
-  padding-left: 0;
-}
-
-.profile-list li,
-.works-list li {
-  display: list-item;
-  padding: 5px 0;
-  margin-left: 0;
 }
 
 .works-list > li > ul {
@@ -187,24 +173,18 @@ th, td {
   margin-left: 20px;
 }
 
-.works-list > li > ul > li {
-  margin-left: 0; /* Remove extra margin */
-  padding-left: 0; /* Remove extra padding */
-}
-
 .profile-list li,
 .works-list li {
-  white-space: normal; /* Ensure list items break onto new lines */
+  white-space: normal;
+}
+
+.works-list li a {
+  display: block;
+  margin-left: 20px;
 }
 
 /* Ensure no text overlap */
 #profile, #works {
   width: 100%;
   overflow: hidden;
-  white-space: normal;
-}
-
-.works-list li a {
-  display: block; /* Ensure links in works list are displayed on new lines */
-  margin-left: 20px;
 }
