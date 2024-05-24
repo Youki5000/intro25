@@ -192,9 +192,19 @@ th, td {
   padding-left: 0; /* Remove extra padding */
 }
 
+.profile-list li,
+.works-list li {
+  white-space: normal; /* Ensure list items break onto new lines */
+}
+
 /* Ensure no text overlap */
 #profile, #works {
   width: 100%;
   overflow: hidden;
   white-space: normal;
+}
+
+.works-list li a {
+  display: block; /* Ensure links in works list are displayed on new lines */
+  margin-left: 20px;
 }
