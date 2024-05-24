@@ -204,3 +204,17 @@ th, td {
   overflow: hidden;
   white-space: normal;
 }
+
+.profile-list, .works-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.profile-list li, .works-list li {
+  padding: 10px 0; /* Add padding to separate items */
+  margin-left: 0;
+}
+
+.works-list > li > ul {
+  padding-left: 20px;
+}
