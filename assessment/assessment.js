@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const paragraph = document.createElement('p');
     paragraph.setAttribute('class', 'card-text');
     const result = assessment(userName);
+    console.log(result); // コンソールに結果を表示して確認
     paragraph.innerText = result;
     bodyDivision.appendChild(paragraph);
 
@@ -35,12 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // ツイートエリアをクリアして新しいツイートボタンを作成
     tweetDivision.innerText = '';
     const anchor = document.createElement('a');
-    const hrefValue = 'https://x.com/intent/tweet?button_hashtag=' + encodeURIComponent('あなたのいいところ') + '&ref_src=twsrc%5Etfw';
+    const hrefValue = 'https://x.com/intent/tweet?button_hashtag=' + encodeURIComponent('今日の運勢') + '&ref_src=twsrc%5Etfw';
     
     anchor.setAttribute('href', hrefValue);
     anchor.setAttribute('class', 'twitter-hashtag-button');
     anchor.setAttribute('data-text', result);
-    anchor.innerText = 'Tweet #あなたのいいところ';
+    anchor.innerText = 'Tweet #今日の運勢';
 
     tweetDivision.appendChild(anchor);
 
