@@ -157,48 +157,44 @@ th, td {
 /* Specific styles for Profile and Works sections */
 #profile ul,
 #works ul {
-  display: flex;
-  flex-direction: column;
+  display: block;
   padding-left: 0;
 }
 
 #profile ul li,
 #works ul li {
-  display: flex;
+  display: block;
   padding: 5px 0;
   margin-left: 0;
-  width: 100%;
 }
 
-.works-list > li > ul {
-  list-style-type: circle;
-  margin-left: 20px;
-}
-
-.profile-list, .works-list {
+.profile-list,
+.works-list {
   list-style-type: disc;
   margin-left: 20px;
   padding-left: 0;
 }
 
-.profile-list li, .works-list li {
+.profile-list li,
+.works-list li {
   display: list-item;
   padding: 5px 0;
-  margin-left: 0;
-}
-
-.profile-list, .works-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.profile-list li, .works-list li {
-  display: list-item;
   margin-left: 0;
 }
 
 .works-list > li > ul {
   list-style-type: circle;
   margin-left: 20px;
+}
+
+.works-list > li > ul > li {
+  margin-left: 0; /* Remove extra margin */
+  padding-left: 0; /* Remove extra padding */
+}
+
+/* Ensure no text overlap */
+#profile, #works {
+  width: 100%;
+  overflow: hidden;
+  white-space: normal;
 }
