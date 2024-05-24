@@ -6,14 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const resultDivision = document.getElementById('result-area');
   const tweetDivision = document.getElementById('tweet-area');
 
+  // 診断ボタンがクリックされたときの処理
   assessmentButton.addEventListener('click', () => {
     const userName = userNameInput.value;
     if (userName.length === 0) {
-      return;
+      return; // 名前が入力されていない場合は処理を中断
     }
-    console.log(userName);
-    resultDivision.innerText = '';
 
+    // 診断結果を表示する
+    resultDivision.innerText = '';
     const headerDivision = document.createElement('div');
     headerDivision.setAttribute('class', 'card-header text-bg-primary');
     headerDivision.innerText = '診断結果';
@@ -31,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     resultDivision.appendChild(headerDivision);
     resultDivision.appendChild(bodyDivision);
 
+    // ツイートエリアをクリアして新しいツイートボタンを作成
     tweetDivision.innerText = '';
     const anchor = document.createElement('a');
     const hrefValue = 'https://x.com/intent/tweet?button_hashtag=' + encodeURIComponent('あなたのいいところ') + '&ref_src=twsrc%5Etfw';
@@ -42,11 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     tweetDivision.appendChild(anchor);
 
+    // Twitterのウィジェットスクリプトを読み込む
     const script = document.createElement('script');
     script.setAttribute('src', 'https://platform.twitter.com/widgets.js');
     tweetDivision.appendChild(script);
   });
 
+  // Enterキーが押されたときに診断ボタンをクリックする
   userNameInput.addEventListener('keydown', (event) => {
     if (event.code === 'Enter') {
       assessmentButton.dispatchEvent(new Event('click'));
@@ -55,28 +59,22 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const answers = [
-  '###userName###のいいところは声です。###userName###の特徴的な声は皆を惹きつけ、心に残ります。',
-  '###userName###のいいところはまなざしです。###userName###に見つめられた人は、気になって仕方がないでしょう。',
-  '###userName###のいいところは情熱です。###userName###の情熱に周りの人は感化されます。',
-  '###userName###のいいところは厳しさです。###userName###の厳しさがものごとをいつも成功に導きます。',
-  '###userName###のいいところは知識です。博識な###userName###を多くの人が頼りにしています。',
-  '###userName###のいいところはユニークさです。###userName###だけのその特徴が皆を楽しくさせます。',
-  '###userName###のいいところは用心深さです。###userName###の洞察に、多くの人が助けられます。',
-  '###userName###のいいところは見た目です。内側から溢れ出る###userName###の良さに皆が気を惹かれます。',
-  '###userName###のいいところは決断力です。###userName###がする決断にいつも助けられる人がいます。',
-  '###userName###のいいところは思いやりです。###userName###に気をかけてもらった多くの人が感謝しています。',
-  '###userName###のいいところは感受性です。###userName###が感じたことに皆が共感し、わかりあうことができます。',
-  '###userName###のいいところは節度です。強引すぎない###userName###の考えに皆が感謝しています。',
-  '###userName###のいいところは好奇心です。新しいことに向かっていく###userName###の心構えが多くの人に魅力的に映ります。',
-  '###userName###のいいところは気配りです。###userName###の配慮が多くの人を救っています。',
-  '###userName###のいいところはその全てです。ありのままの###userName###自身がいいところなのです。',
-  '###userName###のいいところは自制心です。やばいと思ったときにしっかりと衝動を抑えられる###userName###が皆から評価されています。'
+  '###userName###の運勢は大吉です。いい知らせがくるかも。',
+  '###userName###の運勢は大吉です。運命的な出会いがあるかも。',
+  '###userName###の運勢は大吉です。今日は何をやっても絶好調。',
+  '###userName###の運勢は中吉です。何かいいことあるかも。',
+  '###userName###の運勢は中吉です。ちょっとお出かけしてみよう。',
+  '###userName###の運勢は中吉です。おいしいものを食べに出かけてみよう。',
+  '###userName###の運勢は小吉です。ちょっぴりいいことあるかも。',
+  '###userName###の運勢は末吉です。次はいいことあると思う。',
+  '###userName###の運勢は末吉です。何事も控えめに。',
+  '###userName###の運勢は凶です。今日は安静にしましょう。'
 ];
 
+// 名前に基づいて診断結果を生成する関数
 function assessment(userName) {
-  // 現在の日付を取得
   const now = new Date();
-  const day = now.getDate(); // 日を取得
+  const day = now.getDate(); // 現在の日付を取得
 
   // 全文字のコード番号を取得してそれを足し合わせる
   let sumOfCharCode = 0;
@@ -93,42 +91,3 @@ function assessment(userName) {
   result = result.replaceAll('###userName###', userName);
   return result;
 }
-
-// テストを行う関数
-function test() {
-  console.log('診断結果の文章のテスト');
-
-  console.assert(
-    assessment('太郎') === '太郎のいいところは決断力です。太郎がする決断にいつも助けられる人がいます。',
-    '診断結果の文言の特定の部分を名前に置き換える処理が正しくありません。'
-  );
-
-  console.assert(
-    assessment('次郎') === '次郎のいいところは自制心です。やばいと思ったときにしっかりと衝動を抑えられる次郎が皆から評価されています。',
-    '診断結果の文言の特定の部分を名前に置き換える処理が正しくありません。'
-  );
-
-  console.assert(
-    assessment('花子') === '花子のいいところはまなざしです。花子に見つめられた人は、気になって仕方がないでしょう。',
-    '診断結果の文言の特定の部分を名前に置き換える処理が正しくありません。'
-  );
-
-  console.assert(
-    assessment('太郎') === assessment('太郎'),
-    '入力が同じ名前なら同じ診断結果を出力する処理が正しくありません。'
-  );
-
-  console.assert(
-    assessment('次郎') === assessment('次郎'),
-    '入力が同じ名前なら同じ診断結果を出力する処理が正しくありません。'
-  );
-
-  console.assert(
-    assessment('花子') === assessment('花子'),
-    '入力が同じ名前なら同じ診断結果を出力する処理が正しくありません。'
-  );
-  
-  console.log('診断結果の文章のテスト終了');
-}
-
-test();
