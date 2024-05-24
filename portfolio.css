@@ -152,69 +152,53 @@ th, td {
   table {
     min-width: 100%;
   }
-
-  #profile ul,
-  #works ul {
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  #profile ul li,
-  #works ul li {
-    width: 100%;
-  }
-
-  /* Specific styles for Profile and Works sections */
-  #profile ul,
-  #works ul {
-    display: block;
-    padding-left: 0;
-  }
-
-  #profile ul li,
-  #works ul li {
-    display: block;
-    padding: 5px 0;
-    margin-left: 0;
-  }
-
-  .profile-list,
-  .works-list {
-    list-style-type: disc;
-    margin-left: 20px;
-    padding-left: 0;
-  }
-
-  .profile-list li,
-  .works-list li {
-    display: list-item;
-    padding: 5px 0;
-    margin-left: 0;
-  }
-
-  .works-list > li > ul {
-    list-style-type: circle;
-    margin-left: 20px;
-  }
 }
 
-/* Ensure no text overlap */
-#profile, #works {
+/* Specific styles for Profile and Works sections */
+#profile ul,
+#works ul {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+}
+
+#profile ul li,
+#works ul li {
+  display: flex;
+  padding: 5px 0;
+  margin-left: 0;
   width: 100%;
-  overflow: hidden;
-  white-space: normal;
+}
+
+.works-list > li > ul {
+  list-style-type: circle;
+  margin-left: 20px;
 }
 
 .profile-list, .works-list {
-  list-style-type: none;
-  padding: 0;
+  list-style-type: disc;
+  margin-left: 20px;
+  padding-left: 0;
 }
 
 .profile-list li, .works-list li {
-  padding: 10px 0; /* Add padding to separate items */
+  display: list-item;
+  padding: 5px 0;
+  margin-left: 0;
+}
+
+.profile-list, .works-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-list li, .works-list li {
+  display: list-item;
   margin-left: 0;
 }
 
 .works-list > li > ul {
-  padding-left: 20px;
+  list-style-type: circle;
+  margin-left: 20px;
 }
