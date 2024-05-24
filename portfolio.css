@@ -178,3 +178,23 @@ th, td {
   padding: 5px 0;
   margin-left: 0;
 }
+
+/* Specific styles for Profile and Works sections */
+.profile-list,
+.works-list {
+  list-style-type: disc;
+  margin-left: 20px;
+  padding-left: 0;
+}
+
+.profile-list li,
+.works-list li {
+  display: list-item;
+  padding: 5px 0;
+  margin-left: 0;
+}
+
+.works-list > li > ul {
+  list-style-type: circle;
+  margin-left: 20px;
+}
