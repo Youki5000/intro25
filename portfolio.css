@@ -163,38 +163,44 @@ th, td {
   #works ul li {
     width: 100%;
   }
+
+  /* Specific styles for Profile and Works sections */
+  #profile ul,
+  #works ul {
+    display: block;
+    padding-left: 0;
+  }
+
+  #profile ul li,
+  #works ul li {
+    display: block;
+    padding: 5px 0;
+    margin-left: 0;
+  }
+
+  .profile-list,
+  .works-list {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 0;
+  }
+
+  .profile-list li,
+  .works-list li {
+    display: list-item;
+    padding: 5px 0;
+    margin-left: 0;
+  }
+
+  .works-list > li > ul {
+    list-style-type: circle;
+    margin-left: 20px;
+  }
 }
 
-/* Specific styles for Profile and Works sections */
-#profile ul,
-#works ul {
-  display: block;
-  padding-left: 0;
-}
-
-#profile ul li,
-#works ul li {
-  display: block;
-  padding: 5px 0;
-  margin-left: 0;
-}
-
-/* Specific styles for Profile and Works sections */
-.profile-list,
-.works-list {
-  list-style-type: disc;
-  margin-left: 20px;
-  padding-left: 0;
-}
-
-.profile-list li,
-.works-list li {
-  display: list-item;
-  padding: 5px 0;
-  margin-left: 0;
-}
-
-.works-list > li > ul {
-  list-style-type: circle;
-  margin-left: 20px;
+/* Ensure no text overlap */
+#profile, #works {
+  width: 100%;
+  overflow: hidden;
+  white-space: normal;
 }
